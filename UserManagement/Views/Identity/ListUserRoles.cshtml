@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UserManagement.Models.ListUserAndRoleViewModel>
+
+@{
+    ViewBag.Title = "ListUserRoles";
+}
+
+<h2>ListUserRoles</h2>
+
+<p>
+    @Html.ActionLink("给用户再分配一个角色", "CreateUserRole")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditUserRole", new { userId = item.UserId, roleId = item.RoleId }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "DeleteUserRole", new { userId = item.UserId, roleId = item.RoleId })
+            </td>
+        </tr>
+    }
+
+</table>

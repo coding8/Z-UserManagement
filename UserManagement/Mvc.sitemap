@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  <mvcSiteMapNode title="Home" controller="Home" action="Index">
+    
+    <mvcSiteMapNode title="Menu-1" clickable="false" >
+      <mvcSiteMapNode title="Sub 1" controller="Home" action="Index"/>
+      <mvcSiteMapNode title="Sub 2" controller="Home" action="Index"/>
+      <mvcSiteMapNode title="Sub 3" controller="Home" action="Index">
+        <mvcSiteMapNode title="Level 3-1" controller="Home" action="Index"/>
+        <mvcSiteMapNode title="Level 3-2" controller="Home" action="Index">
+          <mvcSiteMapNode title="Level 3-2-1 Login" controller="Account" action="Login"/>
+          <mvcSiteMapNode title="Level 3-2-2" controller="Home" action="Index"/>
+        </mvcSiteMapNode>
+      </mvcSiteMapNode>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="Menu-2" clickable="false" />
+
+    <mvcSiteMapNode title="Menu-3" clickable="false"  roles="Test" >
+      <mvcSiteMapNode title="Sub 1" controller="Home" action="Index"/>
+      <mvcSiteMapNode title="Sub 2" controller="Home" action="Index"/>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="UserManagement" clickable="false">
+      <mvcSiteMapNode title="User" controller="Identity" action="ListUsers" />
+      <mvcSiteMapNode title="Role" controller="Identity" action="ListRoles"/>
+      <mvcSiteMapNode title="UserAndRole" controller="Identity" action="ListUserRoles" />
+      <mvcSiteMapNode title="Reset Password" controller="Identity" action="Password"/>
+    </mvcSiteMapNode>
+    
+  </mvcSiteMapNode>
+</mvcSiteMap>
