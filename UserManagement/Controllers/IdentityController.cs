@@ -211,7 +211,10 @@ namespace UserManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                //var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+
+                // 使中文用户名可编辑
+                var userManager = new ApplicationUserManager();
 
                 //当编辑角色时如果没有角色则直接添加角色
                 if (roleId == null)
