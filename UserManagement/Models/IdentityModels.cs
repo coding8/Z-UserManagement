@@ -25,6 +25,8 @@ namespace UserManagement.Models
             : base(new UserStore<ApplicationUser>(new ApplicationDbContext()))
         {
             PasswordValidator = new MinimumLengthValidator(3);
+            // 允许使用中文名注册
+            UserValidator = new UserValidator<ApplicationUser>(this) { AllowOnlyAlphanumericUserNames = false };
         }
     }
 }
